@@ -6,7 +6,7 @@ document.getElementById('button-login').addEventListener('click', function (even
     
     if(phoneNumber === '07341009647' && pinNumber === 'Aydid@'){
         console.log('You are logged in');
-        window.location.href = '/home.html'
+        window.location.href = '/home.html';
     }
     else{
         alert('Wrong Phone Number or Pin');

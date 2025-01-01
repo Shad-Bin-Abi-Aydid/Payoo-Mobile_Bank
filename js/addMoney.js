@@ -2,18 +2,30 @@
 
 document.getElementById('btn-add-money').addEventListener('click', function(event){
     event.preventDefault();
-    
-    const pinNumberInput = document.getElementById('input-pin-number').value;
-    const addMoneyInput = document.getElementById('input-add-money').value;
 
-    if(pinNumberInput === 'Aydid@'){
-        const balance = document.getElementById('account-balance').innerText;
-        const addMoneyNumber = parseFloat(addMoneyInput);
-        const balanceNumber = parseFloat(balance);
+    const addMoney =  getInputFieldValueById('input-add-money');
+    const pinNumber = getInputFieldValueById('input-pin-number');
 
-        const newBalance = balanceNumber + addMoneyNumber;
+    if(isNaN(addMoney)){
+        alert('Failed to add money');
+        return;
+    }
+
+    if(pinNumber == '123'){
+        const balance = getTextFieldValueById('account-balance');
+
+
+        const newBalance = balance + addMoney;
         
         document.getElementById('account-balance').innerText = newBalance;
+
+        // add to transaction History
+
+        const p = document.createElement('p');
+        p.innerText = `${addMoney} TK. New Balance is ${newBalance}`;
+
+        // added to the transaction history
+        document.getElementById('transaction-container').appendChild(p);
     }
     else{
         alert('Failed to added money! Please try again');

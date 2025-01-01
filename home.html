@@ -30,9 +30,10 @@
             <!-- End -->
 
             <!-- User Action button -->
-            <div class="space-x-4">
+            <div class="space-x-4 grid grid-flow-col justify-between">
               <button id="btn-add" class="btn btn-lg">Add Money</button>
               <button id="btn-out"  class="btn btn-lg">Cash Out</button>
+              <button id="btn-trans"  class="btn btn-lg">Transactions</button>
             </div>
 
             <div class="divider"></div>
@@ -108,12 +109,22 @@
                 </form>
               </div>
             <!-- Cash out money end -->
+
+            <!-- Transaction Start -->
+             <div id="transaction-history" class="hidden">
+              <h2 class="text-3xl text-center">Transaction History</h2>
+
+              <div id="transaction-container" class="space-y-3">
+
+              </div>
+             </div>
           </div>
         </div>
       </div>
     </main>
-    <script src="./js/home.js"></script>
+    <script src="./js/utillities.js"></script>
     <script src="./js/addMoney.js"></script>
     <script src="./js/outMoney.js"></script>
+    <script src="./js/features.js"></script>
   </body>
 </html>
